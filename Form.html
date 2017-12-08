@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Form</title>
+</head>
+<body>
+	<h1>Register</h1>
+	<form>
+		<div>
+			<label for="first_name">First Name:</label>
+			<input id="first_name" type="text" required placeholder="First Name" name="first_name">
+			<label for="last_name">Last Name:</label>
+			<input id="last_name" type="text" required placeholder="Last Name" name="last_name">
+		</div>
+		
+		<div>
+			<label for="Male">Male</label>
+			<input name="gender" type="radio" id="Male" value="Male" required="">				
+			<label for="Female">Female</label>
+			<input name="gender" type="radio" id="Female" value="Female" required="">
+		</div>
+		
+		<div>
+			<label for="email">Email:</label>
+			<input id="email" type="email" required placeholder="Email" name="email">
+			<label for="password">Password:</label>
+			<input id="password" type="password" required title="Password must be betweeen 5 to 10 characters" placeholder="Password" name="password" pattern=".{5,10}">
+		</div>
+
+		<div>
+			Birthday:
+			<select name="Date">
+				<option value="1-10">1 to 10</option>
+				<option value="11-20">11 to 20</option>
+				<option value="21-31">21 to 31</option>
+			</select>
+
+			<select name="Month">
+				<option value="01-04">Jan to Apr</option>
+				<option value="05-08">May to Aug</option>
+				<option value="09-12">Sep to Dec</option>
+			</select>
+
+			<select name="Year">
+				<option value="2010+">After 2010</option>
+				<option value="2000-2009">2000 to 2009</option>
+				<option value="1990-1999">1990 to 1999</option>
+				<option value="1989-">Before 1989</option>
+			</select>
+		</div>
+
+		<div>
+			I agree to the terms and conditions: 
+			<input type="checkbox" name="terms" required="">
+		</div>
+
+		<button>Submit</button>
+	</form>
+</body>
+</html>
