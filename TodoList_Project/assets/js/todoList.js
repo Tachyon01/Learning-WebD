@@ -1,9 +1,9 @@
 //Clearing input
-$("input[type='text']").val("");
+$("#newTodo").val("");
 
 //Removing minus
 $(".fa-chevron-down").fadeToggle(0);
-
+var add = true;
 
 //Ckeck of todos by clicking
 $("ul").on("click","li",function() {
@@ -19,7 +19,7 @@ $("ul").on("click", "span",function(event) {
 });
 
 //New todos
-$("input[type='text']").keypress(function(event){
+$("#newTodo").keypress(function(event){
 	if (event.which === 13)
 	{
 		var todo = $(this).val();
@@ -28,12 +28,21 @@ $("input[type='text']").keypress(function(event){
 	}
 });
 
-//$(".fa-plus").click(function(){
-	//$("input[type='text']").fadeToggle();
-//})
-
+//Toggling text-box
 $("h1 i").click(function(){
-	$("input[type='text']").fadeToggle();
-	$(".fa-chevron-up").fadeToggle(0);
-	$(".fa-chevron-down").fadeToggle(0);
+	$("#newTodo").slideToggle(500);
+	if(add)
+	{
+		add = false;
+		$(".fa-chevron-up").fadeToggle(500, function(){
+		$(".fa-chevron-down").fadeToggle(0);
+		});
+	}
+	else
+	{
+		add = true;
+		$(".fa-chevron-down").fadeToggle(500, function(){
+		$(".fa-chevron-up").fadeToggle(0);
+		});
+	}
 });
